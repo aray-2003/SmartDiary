@@ -1,0 +1,27 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css";
+body {
+    margin: 0;
+    overflow: hidden;
+}
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+
+    background-image: url(background.png), url(background.png);
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    animation: scrollBackground 5s linear infinite;
+}
+
+/* scrolling background */
+@keyframes scrollBackground {
+    0% {
+        background-position: 0 0, 100% 0; /* Initial positions */
+    }
+    100% {
+        background-position: -100% 0, 0 0; /* Final positions (swapped) */
+    }
+}
