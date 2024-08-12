@@ -9,15 +9,28 @@
   </head>
   <body>
     <div class="background">
-        <section class="section">
+      
+        <section class="block">
             <div class="greeting">
                 <h1 class="title">Hello,</h1>
                 <div class="userContainer box">
-                    <h1 class="title user">User</h1>
+                  <p class="control has-icons-left">
+                    <input class="userInput input is-primary is-rounded" id="userInput" type="text" placeholder="What is your name?"/>
+                    <span class="icon is-left">
+                      <i class="fas fa-check"></i>
+                    </span>
+                    <!-- <h1 class="userEnter title" id="userEnter"></h1> -->
+                  </p>
                 </div>
             </div>
-        
+        </section>
+        <section class="block">
+          <div class="textEditor">
+            <div class="editorBackground box"></div>
+
+            </div>
         </section>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

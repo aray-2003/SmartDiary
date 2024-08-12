@@ -12,24 +12,48 @@ body {
 
     background-image: url(background.png), url(background.png);
     background-repeat: repeat-x;
-    background-size: 50% 100%;
+    background-size: 450px;
     animation: scrollBackground 10s linear infinite;
+    animation-direction: alternate;
 }
 
 /* Greeting */
 .title {
-    font-size: 10vw;
+    font-size: 50px;
 }
+
+.block {
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
 .userContainer {
-    width: 85vw;
-    background-color: #e7f4de;
+    display: flex;
+    justify-content: flex-end;
+
+    width: 90vw;
+    background-color: #e7f4de75;
     padding: 10px;
 }
-.user {
+.userInput {
+    width: 35vw;
+    text-align: right;
+}
+
+.userEnter {
     text-align: right;
     color: transparent;
     -webkit-text-stroke: 2px black;
 }
+
+
+.editorBackground {
+    width: 90vw;
+    height: 50vh;
+    background-color: #e7f4de75;
+}
+
+
   
 
 
