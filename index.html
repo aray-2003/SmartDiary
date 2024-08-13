@@ -9,28 +9,40 @@
   </head>
   <body>
     <div class="background">
-      
+        <!-- header section -->
         <section class="block">
             <div class="greeting">
-                <h1 class="title">Hello,</h1>
+                <h1 class="is-size-1" id="greeting">Hello,</h1>
                 <div class="userContainer box">
-                  <p class="control has-icons-left">
-                    <input class="userInput input is-primary is-rounded" id="userInput" type="text" placeholder="What is your name?"/>
-                    <span class="icon is-left">
-                      <i class="fas fa-check"></i>
+                  <p class="control has-icons-left has-icons-right" id="userContainer">
+                    <input class="userInput input is-rounded" id="userInput" type="text" placeholder="What is your name?">
+                    <span class="icon is-left" id="profile">
+                      <i class="fas fa-user"></i>
                     </span>
-                    <!-- <h1 class="userEnter title" id="userEnter"></h1> -->
+                    <span class="icon is-right" id="enter">
+                      <i class="fas fa-right-to-bracket"></i>
+                    </span>
                   </p>
+                  <h1 class="userEnter is-size-3" id="userEnter"></h1>
                 </div>
             </div>
         </section>
+        <!-- editor section -->
         <section class="block">
           <div class="textEditor">
-            <div class="editorBackground box"></div>
-
+            <div class="editorBackground box">
+              <div class="dateContainer block">
+                <h1 class="is-size-6" id="date"></h1>
+              </div>
+              <div class="control">
+                <textarea class="textarea" id="goals" placeholder="Today I want to..."></textarea>
+              </div>
             </div>
+          </div>
         </section>
     </div>
-    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="textEditor.js"></script>
+    <script src="https://kit.fontawesome.com/43fad0b782.js" crossorigin="anonymous"></script>
   </body>
 </html>
