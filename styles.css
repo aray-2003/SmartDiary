@@ -18,7 +18,7 @@ body {
     background-image: url(background.png), url(background.png);
     background-repeat: repeat-x;
     background-size: 450px;
-    animation: scrollBackground 10s linear infinite;
+    animation: scrollBackground 15s linear infinite;
     animation-direction: alternate;
 }
 
@@ -56,7 +56,15 @@ body {
 }
 
 #date {
-    /* display: inline-block; */
+    display: inline-block;
+    background-color: #e2ecf1;
+    padding: 7px;
+    border-radius: 20px;
+    font-family: var(--default);
+}
+
+#quote {
+    display: inline-block;
     background-color: #e2ecf1;
     padding: 7px;
     border-radius: 20px;
@@ -78,9 +86,19 @@ body {
 }
 
 #goals {
+    border-radius: 20px;
     background-color: #e2ecf183;
-    min-height: 22rem;
-    max-height: 22rem;
+    height: 33vh;
+    min-height: 10vh;
+    max-height: 33vh;
+}
+
+.quoteContainer {
+}
+
+.dateAndQuote {
+    display: flex;
+    justify-content: space-between;
 }
 
 
