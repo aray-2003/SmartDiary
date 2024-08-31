@@ -23,7 +23,7 @@
                       <i class="fas fa-right-to-bracket"></i>
                     </span>
                   </p>
-                  <h1 class="userEnter is-size-3" id="userEnter"></h1>
+                  <h1 class="userEnter is-size-2" id="userEnter"></h1>
                 </div>
             </div>
         </section>
@@ -39,15 +39,52 @@
                   <p class="is-size-6" id="quote"></p>
                 </div>
               </div>
-              <div class="control">
+              <div class="control block">
                 <textarea class="textarea" id="goals" placeholder="Today I want to..."></textarea>
+              </div>
+              <div class="buttonContainer is-grouped field">
+                <button class="button is-rounded " id="generate">Generate Schedule</button>
               </div>
             </div>
           </div>
         </section>
+        <!-- ai section -->
+         <section class="block">
+          <div class="aiResponse">
+            <div class="responseBackground box">
+            <div class="is-grouped field">
+              <div class="imageContainer">
+                <img id="star" src="star.png">
+              </div>
+              <div class="aiFeedbackContainer">
+                <h1 class="aiFeedback is-size-2" id="aiFeedback">Standing</h1>
+              </div>
+            </div>
+            </div>
+          </div>
+         </section>
+         <!-- response modal -->
+         <div class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Your Plan</p>
+            </header>
+            <section class="modal-card-body">
+              <p id="aiResponse"></p>
+            </section>
+            <footer class="modal-card-foot">
+              <div class="buttons">
+                <button class="button is-success">Export</button>
+                <button class="button" id="closeModal">Close</button>
+              </div>
+            </footer>
+          </div>
+        </div>
     </div>
     <script src="header.js"></script>
     <script src="textEditor.js"></script>
+    <script src="aiResponse.js"></script>
     <script src="https://kit.fontawesome.com/43fad0b782.js" crossorigin="anonymous"></script>
   </body>
 </html>

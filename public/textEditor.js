@@ -1,7 +1,7 @@
 const dateField = document.getElementById('date')
 const quoteField = document.getElementById('quote')
 
-const currentDate = new Date();
+
 
 function updateDate() {
     const currentDate = new Date();

@@ -27,6 +27,7 @@ body {
 
 #greeting {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #4AC88F;
 }
 
 .greeting {
@@ -38,7 +39,7 @@ body {
     justify-content: flex-end;
 
     width: 90vw;
-    background-color: #e7f4de75;
+    background-color: #e2ecf180;
     padding: 10px;
     padding-left: 25px;
 }
@@ -49,13 +50,15 @@ body {
 }
 
 .userEnter {
+    white-space: nowrap;
     font-family: var(--default);
     text-align: right;
     color: transparent;
-    -webkit-text-stroke: 1.5px black;
+    -webkit-text-stroke: 2px #4AC88F;
 }
 
 #date {
+
     display: inline-block;
     background-color: #e2ecf1;
     padding: 7px;
@@ -64,6 +67,7 @@ body {
 }
 
 #quote {
+
     display: inline-block;
     background-color: #e2ecf1;
     padding: 7px;
@@ -76,9 +80,19 @@ body {
     padding-left: 25px;
 }
 .editorBackground {
-    width: 90vw;
-    height: 50vh;
+    max-width: 90vw;
+    min-height: 50vh;
     background-color: #e7f4de75;
+}
+
+.aiResponse {
+    padding-left: 25px;
+}
+
+.responseBackground {
+    width: 90vw;
+    min-height: 25vh;
+    background-color: #e2ecf180;
 }
 
 #enter {
@@ -88,18 +102,40 @@ body {
 #goals {
     border-radius: 20px;
     background-color: #e2ecf183;
-    height: 33vh;
-    min-height: 10vh;
-    max-height: 33vh;
+    min-height: 33vh;
 }
 
-.quoteContainer {
+#generate {
+    background-color: #e2ecf1;
 }
 
 .dateAndQuote {
     display: flex;
     justify-content: space-between;
 }
+
+.imageContainer {
+    width: 10vh;
+}
+
+#star {
+    animation: pulse 1.5s infinite;
+}
+
+.aiFeedbackContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aiFeedback {
+    animation: fade 1.5s infinite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #4AC88F;
+}
+
+
 
 
   
@@ -113,4 +149,47 @@ body {
     100% {
         background-position: -100% 0, 0 0; /* Final positions (swapped) */
     }
+}
+
+/* fade animation */
+@keyframes fade {
+    0% {
+        opacity: 0.4;
+      }
+      50% {
+        opacity: 1; 
+      }
+      100% {
+        opacity: 0.4; 
+      }
+}
+
+#star.loading {
+    animation: loading 1.5s infinite;
+}
+
+/* pulse animation */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+       /* Start at normal size */
+    }
+    50% {
+      transform: scale(1.2); /* Grow to 110% size */
+    }
+    100% {
+      transform: scale(1); /* Return to normal size */
+    }
+  }
+
+@keyframes loading {
+    0% {
+        transform: rotate(0);
+         /* Start at normal size */
+      }
+
+      100% {
+        transform: rotate(1turn); /* Return to normal size */
+      }
+    
 }
