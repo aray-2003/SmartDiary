@@ -12,7 +12,6 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Or your 
 
 // Serve static files (like your HTML, CSS, JS)
 app.use(express.json())
-app.use(express.static('public')); 
 
 app.post('/generate-text', async (req, res) => {
   try {
@@ -43,9 +42,17 @@ app.post('/generate-text', async (req, res) => {
   }
 });
 
-app.get('/test', (req, res) => {
-  res.send('Test route working!'); 
+app.use(express.static('public'), (req, res, next) => {
+  console.log('Request for static file:', req.path);
+  next();
 });
+
+app.get('/test', (req, res) => {
+  console.log('Test route hit');
+  res.send('Test route working!');
+});
+
+
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}/`);
