@@ -1,7 +1,8 @@
 # Smart Diary
 
-https://github.com/user-attachments/assets/599b78e4-6ab3-47f5-b60e-1476b20bb447
+https://github.com/user-attachments/assets/08c91ec5-8e8f-454f-85af-d5c3f8516589
 
+As you can see from the demo, it handles user errors well and is unaffected by small typos and formatting mistakes as it relies on AI.
 
 
 
@@ -12,6 +13,6 @@ Smart Diary is a web application designed to help you organize your thoughts, go
 ## Features
 
 - [ ] **Goal Setting:** Easily set and track your daily goals.
-- [ ] **AI-Powered Schedule Generation:** Generate personalized schedules based on your goals and the current time.
+- [x] **AI-Powered Schedule Generation:** Generate personalized schedules based on your goals and the current time.
 - [x] **User-Friendly Interface:** A clean and intuitive interface makes it easy to use.
 - [x] **Secure and Private:** Your data is kept safe and confidential.
