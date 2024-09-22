@@ -42,17 +42,7 @@ app.post('/generate-text', async (req, res) => {
   }
 });
 
-app.use(express.static('public'), (req, res, next) => {
-  console.log('Request for static file:', req.path);
-  next();
-});
-
-app.get('/test', (req, res) => {
-  console.log('Test route hit');
-  res.send('Test route working!');
-});
-
-
+app.use(express.static('public')); 
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}/`);

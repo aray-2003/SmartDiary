@@ -168,6 +168,11 @@ body {
     animation: loading 1.5s infinite;
 }
 
+#aiFeedback.clickable {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* pulse animation */
 @keyframes pulse {
     0% {

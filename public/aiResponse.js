@@ -11,7 +11,7 @@ let generatedPlan = ''; // Store the generated plan globally
 // Function to send a request to your server and get text from Gemini
 async function getGeneratedText(prompt) {
   try {
-    const response = await fetch('/generate-text', {
+    const response = await fetch(`${window.location.origin}/api/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt: prompt })
@@ -42,22 +42,32 @@ async function getGeneratedText(prompt) {
 
   const userGoal = textInput.value;
 
-  if (userGoal) {
-    aiDisplay.textContent = 'Generating';
+    if (userGoal) {
+      aiDisplay.classList.remove('clickable')
+      aiDisplay.textContent = 'Generating';
     star.classList.add('loading');
     const currentDate = new Date();
     const options = { weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true };
     const formattedDate = currentDate.toLocaleString('en-US', options);
-    const prompt = `You are an expert and customized AI agent that generates personalized schedules for users based on their input goals. It is currently ${formattedDate} My goals are to ${userGoal}. Can you create a timely schedule for me?`;
+    const prompt = `You are an expert and soley a specialized AI agent that generates personalized schedules for users based on their input goals. It is currently ${formattedDate}, My goals are to ${userGoal}. Generate a concise, realistic and well laid-out schedule.`;
     const plan = await getGeneratedText(prompt);
+
+    
  
 
     if (plan) { // Only proceed if plan was generated successfully
       aiDisplay.textContent = 'Complete';
       aiDisplay.classList.add('clickable');
+      star.classList.remove('loading')
+
+      var converter = new showdown.Converter(),
+        text      = plan,
+        html      = converter.makeHtml(text);
+      
+      generatedPlan = html
 
       aiResponseModal.classList.add('is-active');
-      document.getElementById('aiResponse').innerText = plan;
+      document.getElementById('aiResponse').innerHTML = html;
     } 
   } else {
     // Handle case where userGoal is empty
@@ -66,11 +76,11 @@ async function getGeneratedText(prompt) {
   }
   });
         
-        // Add event listener to aiDisplay to open the modal
+    // Add event listener to aiDisplay to open the modal
   aiDisplay.addEventListener('click', () => {
     if (aiDisplay.textContent === 'Complete') {
       aiResponseModal.classList.add('is-active');
-      document.getElementById('aiResponse').innerText = generatedPlan;
+      document.getElementById('aiResponse').innerHTML = generatedPlan;
     }
   });
   
